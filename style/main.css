@@ -541,7 +541,7 @@ hr {
     margin-bottom: 30px; }
 
   .heading {
-    margin-bottom: 10px; }
+    margin-bottom: 8px; }
 
   .game-intro {
     width: 55%;
@@ -557,7 +557,7 @@ hr {
     margin-top: 2px; }
 
   .game-container {
-    margin-top: 17px;
+    margin-top: 14px;
     position: relative;
     padding: 10px;
     cursor: default;

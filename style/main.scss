@@ -479,7 +479,7 @@ hr {
   $grid-row-cells: 4 !global;
   $tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells !global;
   $tile-border-radius: 3px !global;
-  $game-container-margin-top: 17px !global;
+  $game-container-margin-top: 14px !global;
 
   html, body {
     font-size: 15px;
@@ -508,7 +508,7 @@ hr {
   }
 
   .heading {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   // Show intro and restart button side by side
