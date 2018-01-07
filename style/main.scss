@@ -474,12 +474,12 @@ hr {
 
 @include smaller($mobile-threshold) {
   // Redefine variables for smaller screens
-  $field-width: 280px;
-  $grid-spacing: 10px;
-  $grid-row-cells: 4;
-  $tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells;
-  $tile-border-radius: 3px;
-  $game-container-margin-top: 17px;
+  $field-width: 280px !global;
+  $grid-spacing: 10px !global;
+  $grid-row-cells: 4 !global;
+  $tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells !global;
+  $tile-border-radius: 3px !global;
+  $game-container-margin-top: 17px !global;
 
   html, body {
     font-size: 15px;
@@ -491,12 +491,12 @@ hr {
   }
 
   h1.title {
-    font-size: 27px;
+    font-size: 32px;
     margin-top: 15px;
   }
 
   .container {
-    width: $field-width;
+    width:  $field-width;
     margin: 0 auto;
   }
 
@@ -504,6 +504,7 @@ hr {
     margin-top: 0;
     padding: 15px 10px;
     min-width: 40px;
+    margin-bottom: 30px;
   }
 
   .heading {
