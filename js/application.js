@@ -1,5 +1,5 @@
 // Wait till the browser is ready to render the game (avoids glitches)
-window.requestAnimationFrame(function () {
+window.requestAnimationFrame(function() {
   new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
 });
 
@@ -12,7 +12,7 @@ if (!window.Promise) {
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
         .register('sw.js')
-        .then(function () {
+        .then(function() {
             console.log('Service worker registered!');
         })
         .catch(function(err) {
