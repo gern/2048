@@ -1,5 +1,5 @@
-var CACHE_STATIC_NAME = 'static-v4';
-var CACHE_DYNAMIC_NAME = 'dynamic-v4';
+var CACHE_STATIC_NAME = 'static-v5';
+var CACHE_DYNAMIC_NAME = 'dynamic-v5';
 var STATIC_FILES = [
     '/2048/',
     '/2048/index.html',
@@ -15,7 +15,10 @@ var STATIC_FILES = [
     '/2048/js/promise.js',
     '/2048/js/fetch.js',
     '/2048/js/application.js',
-    '/2048/style/main.css'
+    '/2048/style/main.css',
+    '/2048/style/fonts/clear-sans.css',
+    '/2048/style/fonts/ClearSans-Bold-webfont.woff',
+    '/2048/style/fonts/ClearSans-Regular-webfont.woff'
 ];
 
 self.addEventListener('install', function (event) {
