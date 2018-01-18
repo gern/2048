@@ -1,21 +1,21 @@
-var CACHE_STATIC_NAME = 'static-v3';
-var CACHE_DYNAMIC_NAME = 'dynamic-v3';
+var CACHE_STATIC_NAME = 'static-v4';
+var CACHE_DYNAMIC_NAME = 'dynamic-v4';
 var STATIC_FILES = [
-    '2048/',
-    '2048/index.html',
-    '2048/js/bind_polyfill.js',
-    '2048/js/classlist_polyfill.js',
-    '2048/js/animframe_polyfill.js',
-    '2048/js/keyboard_input_manager.js',
-    '2048/js/html_actuator.js',
-    '2048/js/grid.js',
-    '2048/js/tile.js',
-    '2048/js/local_storage_manager.js',
-    '2048/js/game_manager.js',
-    '2048/js/promise.js',
-    '2048/js/fetch.js',
-    '2048/js/application.js',
-    '2048/style/main.css'
+    '/2048/',
+    '/2048/index.html',
+    '/2048/js/bind_polyfill.js',
+    '/2048/js/classlist_polyfill.js',
+    '/2048/js/animframe_polyfill.js',
+    '/2048/js/keyboard_input_manager.js',
+    '/2048/js/html_actuator.js',
+    '/2048/js/grid.js',
+    '/2048/js/tile.js',
+    '/2048/js/local_storage_manager.js',
+    '/2048/js/game_manager.js',
+    '/2048/js/promise.js',
+    '/2048/js/fetch.js',
+    '/2048/js/application.js',
+    '/2048/style/main.css'
 ];
 
 self.addEventListener('install', function (event) {
@@ -57,7 +57,6 @@ function isInArray(string, array) {
 }
 
 self.addEventListener('fetch', function (event) {
-    console.log("Fetch '" + event.request.url + "'");
     if (isInArray(event.request.url, STATIC_FILES)) {
         event.respondWith(
             caches.match(event.request)
