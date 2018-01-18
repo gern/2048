@@ -1,21 +1,21 @@
-var CACHE_STATIC_NAME = 'static-v2';
-var CACHE_DYNAMIC_NAME = 'dynamic-v2';
+var CACHE_STATIC_NAME = 'static-v3';
+var CACHE_DYNAMIC_NAME = 'dynamic-v3';
 var STATIC_FILES = [
-    '/',
-    '/index.html',
-    '/js/bind_polyfill.js',
-    '/js/classlist_polyfill.js',
-    '/js/animframe_polyfill.js',
-    '/js/keyboard_input_manager.js',
-    '/js/html_actuator.js',
-    '/js/grid.js',
-    '/js/tile.js',
-    '/js/local_storage_manager.js',
-    '/js/game_manager.js',
-    '/js/promise.js',
-    '/js/fetch.js',
-    '/js/application.js',
-    '/style/main.css'
+    '2048/',
+    '2048/index.html',
+    '2048/js/bind_polyfill.js',
+    '2048/js/classlist_polyfill.js',
+    '2048/js/animframe_polyfill.js',
+    '2048/js/keyboard_input_manager.js',
+    '2048/js/html_actuator.js',
+    '2048/js/grid.js',
+    '2048/js/tile.js',
+    '2048/js/local_storage_manager.js',
+    '2048/js/game_manager.js',
+    '2048/js/promise.js',
+    '2048/js/fetch.js',
+    '2048/js/application.js',
+    '2048/style/main.css'
 ];
 
 self.addEventListener('install', function (event) {
