@@ -1,25 +1,31 @@
 var CACHE_STATIC_NAME = 'static-v5';
 var CACHE_DYNAMIC_NAME = 'dynamic-v5';
+var URL_PREFIX = '/2048';
 var STATIC_FILES = [
-    '/2048/',
-    '/2048/index.html',
-    '/2048/js/bind_polyfill.js',
-    '/2048/js/classlist_polyfill.js',
-    '/2048/js/animframe_polyfill.js',
-    '/2048/js/keyboard_input_manager.js',
-    '/2048/js/html_actuator.js',
-    '/2048/js/grid.js',
-    '/2048/js/tile.js',
-    '/2048/js/local_storage_manager.js',
-    '/2048/js/game_manager.js',
-    '/2048/js/promise.js',
-    '/2048/js/fetch.js',
-    '/2048/js/application.js',
-    '/2048/style/main.css',
-    '/2048/style/fonts/clear-sans.css',
-    '/2048/style/fonts/ClearSans-Bold-webfont.woff',
-    '/2048/style/fonts/ClearSans-Regular-webfont.woff'
+    '/',
+    '/index.html',
+    '/js/bind_polyfill.js',
+    '/js/classlist_polyfill.js',
+    '/js/animframe_polyfill.js',
+    '/js/keyboard_input_manager.js',
+    '/js/html_actuator.js',
+    '/js/grid.js',
+    '/js/tile.js',
+    '/js/local_storage_manager.js',
+    '/js/game_manager.js',
+    '/js/promise.js',
+    '/js/fetch.js',
+    '/js/application.js',
+    '/style/main.css',
+    '/style/fonts/clear-sans.css',
+    '/style/fonts/ClearSans-Bold-webfont.woff',
+    '/style/fonts/ClearSans-Regular-webfont.woff'
 ];
+
+if(URL_PREFIX.length > 0) {
+    for (var i in STATIC_FILES)
+        STATIC_FILES[i] = URL_PREFIX + STATIC_FILES[i];
+}
 
 self.addEventListener('install', function (event) {
     console.log('[Service Worker] Installing Service Worker ...', event);
@@ -62,6 +68,13 @@ self.addEventListener('fetch', function (event) {
     if (isInArray(event.request.url, STATIC_FILES)) {
         event.respondWith(
             caches.match(event.request)
+                .then(function (response) {
+                    if (response) {
+                        return response;
+                    } else {
+                        return fetch(event.request);
+                    }
+                })
         );
     } else {
         event.respondWith(
